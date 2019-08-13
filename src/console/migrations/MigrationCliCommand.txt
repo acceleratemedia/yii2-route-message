@@ -1,0 +1,7 @@
+php yii m-route-alert/create create_route_alert_table \
+    --fields="route:string:notNull, \
+    app_id:string:notNull, \
+    message:string:notNull, \
+    params:string:null, \
+    create_time:timestamp:defaultExpression('CURRENT_TIMESTAMP'), \
+    update_time:timestamp:defaultExpression('CURRENT_TIMESTAMP'):append('ON UPDATE CURRENT_TIMESTAMP')"
