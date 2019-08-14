@@ -60,6 +60,7 @@ class RouteAlert extends \bvb\routealert\backend\models\RouteAlert
         $query->andFilterWhere([
             'create_time' => $this->create_time,
             'update_time' => $this->update_time,
+            'active' => $this->active,
         ]);
 
         $query->andFilterWhere(['like', 'route', $this->route])
