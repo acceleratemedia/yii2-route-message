@@ -25,7 +25,7 @@ class M190812224429CreateRouteAlertTable extends Migration
             'update_time' => $this->timestamp()->defaultExpression('CURRENT_TIMESTAMP')->append('ON UPDATE CURRENT_TIMESTAMP'),
         ]);
 
-        // creates index for column `category_id`
+        // creates unique index on the app and route
         $this->createIndex(
             'idx-route_alert-unique',
             'route_alert',
