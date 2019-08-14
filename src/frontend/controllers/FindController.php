@@ -22,7 +22,7 @@ class FindController extends Controller
     {
         $parts = parse_url($url);
         $route = ltrim($parts['path'], '/');
-        $query = RouteAlert::find()->where([
+        $result = RouteAlert::find()->where([
                 'AND',
                 [
                     'OR',
@@ -36,17 +36,14 @@ class FindController extends Controller
                     ['route' => $route.'*'],
                     ['route' => '*'.$route.'*'],
                 ],
-            ])->asArray();
+            ])->asArray()
+            ->one();
 
-        if(isset($parts['query'])){
-            $query->andWhere([
-                'OR',
-                ['query_string' => ''],
-                ['query_string' => $parts['query']],
-            ]);
+        if( $result && !empty($result['frequency']) ){
+            echo $result['frequency']; exit;
         }
 
         Yii::$app->response->format = Response::FORMAT_JSON;
-        return $query->one();
+        return $result;
     }
 }

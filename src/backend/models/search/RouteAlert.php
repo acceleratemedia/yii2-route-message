@@ -17,7 +17,7 @@ class RouteAlert extends \bvb\routealert\backend\models\RouteAlert
     public function rules()
     {
         return [
-            [['app_id', 'route', 'message', 'query_string', 'active'], 'safe'],
+            [['app_id', 'route', 'message', 'css_class', 'active', 'frequency'], 'safe'],
         ];
     }
 
@@ -61,11 +61,12 @@ class RouteAlert extends \bvb\routealert\backend\models\RouteAlert
             'create_time' => $this->create_time,
             'update_time' => $this->update_time,
             'active' => $this->active,
+            'frequency' => $this->frequency,
         ]);
 
         $query->andFilterWhere(['like', 'route', $this->route])
             ->andFilterWhere(['like', 'message', $this->message])
-            ->andFilterWhere(['like', 'query_string', $this->query_string]);
+            ->andFilterWhere(['like', 'css_class', $this->css_class]);
 
         return $dataProvider;
     }

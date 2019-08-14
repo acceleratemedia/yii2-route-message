@@ -39,8 +39,8 @@ $.get(
 	}
 ).done(function(data, textStatus, jqXHR){
 	if(data){
-        console.log(data);
         $("#route-alert-modal .modal-content").html(data.message);
+        $("#route-alert-modal").addClass("route-alert-id-"+data.css_class);
         $("#route-alert-modal").modal("show");
 	}
 })

@@ -33,9 +33,16 @@ $applicationsList = Helper::getApplicationsList();
                 }
             ],
             'route',
-            'message',
-            'query_string',
+            [
+                'attribute' => 'frequency',
+                'value' => function($model){
+                    echo Helper::$defaultFrequencyList[$model->frequency];
+                },
+                'filter' => Helper::$defaultFrequencyList
+            ],
+            'css_class',
             'active:boolean',
+            'message',
 
             [
                 'class' => 'yii\grid\ActionColumn',
