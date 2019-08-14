@@ -3,8 +3,9 @@
     "description": "Admin area, filter, and migrations needed for show admin-generated alerts on specific routes",
     "type": "yii2-extension",
     "require": {
+        "brianvb/yii2-crud": "*",
+        "yiidoc/yii2-redactor": "*",
         "yiisoft/yii2": "^2.0",
-        "brianvb/yii2-crud": "^2.0",
     },
     "authors": [
         {

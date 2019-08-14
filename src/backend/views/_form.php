@@ -21,7 +21,16 @@ $applicationsList = Helper::getApplicationsList();
 
     <?= $form->field($model, 'query_string')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'message')->textarea() ?>
+    <label for="route-alert-message">Message</label>
+    <div class="redactor-container" id="redactor-message-container">
+        <?= $form->field($model, 'message', ['template' => "{input}\n{hint}\n{error}"])
+            ->widget(\yii\redactor\widgets\Redactor::className(), [
+                'clientOptions' => [
+                    'toolbarFixedTarget' => '#redactor-message-container',
+                    'replaceDivs' => false
+                ]
+        ]) ?>
+    </div>
 
     <?= $form->field($model, 'active')->checkbox() ?>
 
