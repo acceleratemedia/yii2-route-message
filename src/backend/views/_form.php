@@ -36,8 +36,22 @@ $applicationsList = Helper::getApplicationsList();
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <a class="btn btn-info preview-btn">Preview</a>
     </div>
 
     <?php ActiveForm::end(); ?>
 
 </div>
+
+<?php
+// --- Render the modal dialog for the preview
+echo $this->render('@bvb-route-alert/frontend/widgets/views/modal');
+
+$ready_js = <<<'JAVASCRIPT'
+$("body").on("click", ".preview-btn", function(e){
+    $("#route-alert-modal .modal-content").html($('#routealert-message').redactor("code.get"));
+    $("#route-alert-modal").modal("show");
+})
+
+JAVASCRIPT;
+$this->registerJs($ready_js);

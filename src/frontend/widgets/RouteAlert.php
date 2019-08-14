@@ -19,6 +19,7 @@ class RouteAlert extends \yii\base\Widget
     public function run()
     {
         $this->registerJavascript();
+        return $this->render('modal');
     }   
 
     /**
@@ -37,19 +38,14 @@ $.get(
 		app_id: '{$appId}'
 	}
 ).done(function(data, textStatus, jqXHR){
-	console.log("success")
 	if(data){
-		// --- Open the modal with the alert
-		console.log(data)
-		console.log(textStatus)
-		console.log(jqXHR)       			
+        console.log(data);
+        $("#route-alert-modal .modal-content").html(data.message);
+        $("#route-alert-modal").modal("show");
 	}
 })
 .fail(function( jqXHR, textStatus, errorThrown){
-	console.log("faile")
-	console.log(jqXHR)
-	console.log(textStatus)
-	console.log(errorThrown)
+
 });
 JAVASCRIPT;
 
