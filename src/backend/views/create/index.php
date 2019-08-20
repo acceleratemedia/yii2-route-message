@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model bvb\routemessage\backend\models\RouteMessage */
 
-$this->title = 'Create Route Alert';
+$this->title = 'Create Route Message';
 ?>
 <div class="route-message-create">
 

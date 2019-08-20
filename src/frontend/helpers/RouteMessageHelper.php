@@ -9,52 +9,52 @@ use yii\web\Cookie;
 class RouteMessageHelper
 {
 	/**
-	 * @param array $routeAlert
+	 * @param array $routeMessage
 	 * @return boolean
 	 */
-	static function userShouldView($routeAlert)
+	static function userShouldView($routeMessage)
 	{
-		if(empty($routeAlert['frequency'])){
+		if(empty($routeMessage['frequency'])){
 			return true;
 		}
 
-		$cookieName = self::getCookieName($routeAlert);
+		$cookieName = self::getCookieName($routeMessage);
 		Yii::info($cookieName);
 		if( Yii::$app->request->cookies->has($cookieName) ){
 			// --- Check the frequency and the time of the cookie to see if it
 			// --- should be displayed for them again
-			$routeAlertCookie = Yii::$app->request->cookies->get($cookieName);
+			$routeMessageCookie = Yii::$app->request->cookies->get($cookieName);
 			Yii::info(print_r($_COOKIE,true));
-			Yii::info(print_r($routeAlertCookie,true));
-			Yii::info(print_r($routeAlert,true));
-			if($routeAlertCookie->value >= (time() - $routeAlert['frequency']) ){
+			Yii::info(print_r($routeMessageCookie,true));
+			Yii::info(print_r($routeMessage,true));
+			if($routeMessageCookie->value >= (time() - $routeMessage['frequency']) ){
 				return false;
 			}
 		} else {
-			self::setRouteMessageCookie($routeAlert);
+			self::setRouteMessageCookie($routeMessage);
 		}
 		return true;
 	}
 
 	/**
-	 * @param array $routeAlert
+	 * @param array $routeMessage
 	 * @return string The unique cookie name for the route message
 	 */
-	static function getCookieName($routeAlert)
+	static function getCookieName($routeMessage)
 	{
-		return 'seenRouteMessage-'.$routeAlert['app_id'].'-'.$routeAlert['route'];
+		return 'seenRouteMessage-'.$routeMessage['app_id'].'-'.$routeMessage['route'];
 	}
 
 	/**
-	 * @param array $routeAlert
+	 * @param array $routeMessage
 	 * @return void
 	 */
-	static function setRouteMessageCookie($routeAlert)
+	static function setRouteMessageCookie($routeMessage)
 	{
 		$seenRouteMessageCookie = new Cookie([
-		    'name' => self::getCookieName($routeAlert),
+		    'name' => self::getCookieName($routeMessage),
 		    'value' => time(),
-		    'expire' => time()+intval($routeAlert['frequency'])
+		    'expire' => time()+intval($routeMessage['frequency'])
 		]);
 		Yii::$app->response->cookies->add($seenRouteMessageCookie);
 	}

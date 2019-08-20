@@ -8,7 +8,7 @@ use yii\grid\GridView;
 /* @var $search_model backend\models\RouteMessage */
 /* @var $data_provider yii\data\ActiveDataProvider */
 
-$this->title = 'Route Alerts';
+$this->title = 'Route Messages';
 
 $applicationsList = RouteMessageHelper::getApplicationsList();
 ?>
@@ -17,7 +17,7 @@ $applicationsList = RouteMessageHelper::getApplicationsList();
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Route Alert', ['create/'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Route Message', ['create/'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
