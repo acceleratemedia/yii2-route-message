@@ -3,6 +3,7 @@
 namespace bvb\routealert\frontend\controllers;
 
 use bvb\routealert\common\models\RouteAlert;
+use bvb\routealert\frontend\helpers\RouteAlertHelper;
 use Yii;
 use yii\web\Controller;
 use yii\web\Response;
@@ -39,11 +40,7 @@ class FindController extends Controller
             ])->asArray()
             ->one();
 
-        if( $result && !empty($result['frequency']) ){
-            echo $result['frequency']; exit;
-        }
-
-        Yii::$app->response->format = Response::FORMAT_JSON;
-        return $result;
+        Yii::$app->response->format = Response::FORMAT_JSON;        
+        return ($result && RouteAlertHelper::userShouldView($result)) ? $result : null;
     }
 }
