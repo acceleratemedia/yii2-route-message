@@ -1,6 +1,6 @@
 <?php
 
-use bvb\routealert\backend\helpers\Helper;
+use bvb\routealert\backend\helpers\RouteAlertHelper;
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 
@@ -8,7 +8,7 @@ use yii\bootstrap\ActiveForm;
 /* @var $model bvb\routealert\backend\models\RouteAlert */
 /* @var $form yii\bootstrap\ActiveForm */
 
-$applicationsList = Helper::getApplicationsList();
+$applicationsList = RouteAlertHelper::getApplicationsList();
 ?>
 
 <div class="route-alert-form">
@@ -19,7 +19,7 @@ $applicationsList = Helper::getApplicationsList();
 
     <?= $form->field($model, 'route')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'frequency')->dropdownList(Helper::$defaultFrequencyList) ?>
+    <?= $form->field($model, 'frequency')->dropdownList(RouteAlertHelper::$defaultFrequencyList) ?>
 
     <?= $form->field($model, 'css_class')->textInput(['maxlength' => true]) ?>
 

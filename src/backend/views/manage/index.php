@@ -1,6 +1,6 @@
 <?php
 
-use bvb\routealert\backend\helpers\Helper;
+use bvb\routealert\backend\helpers\RouteAlertHelper;
 use yii\helpers\Html;
 use yii\grid\GridView;
 
@@ -10,7 +10,7 @@ use yii\grid\GridView;
 
 $this->title = 'Route Alerts';
 
-$applicationsList = Helper::getApplicationsList();
+$applicationsList = RouteAlertHelper::getApplicationsList();
 ?>
 <div class="route-alert-index">
 
@@ -36,9 +36,9 @@ $applicationsList = Helper::getApplicationsList();
             [
                 'attribute' => 'frequency',
                 'value' => function($model){
-                    echo Helper::$defaultFrequencyList[$model->frequency];
+                    echo RouteAlertHelper::$defaultFrequencyList[$model->frequency];
                 },
-                'filter' => Helper::$defaultFrequencyList
+                'filter' => RouteAlertHelper::$defaultFrequencyList
             ],
             'css_class',
             'active:boolean',
