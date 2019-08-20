@@ -3,8 +3,8 @@
     "description": "Admin area, filter, and migrations needed for show admin-generated messages on specific routes",
     "type": "yii2-extension",
     "require": {
-        "brianvb/yii2-crud": "*",
-        "brianvb/yii2-user": "*",
+        "brianvb/yii2-crud": "~1.0.2",
+        "brianvb/yii2-user": "~2.0.1",
         "yiidoc/yii2-redactor": "*",
         "yiisoft/yii2": "^2.0"
     },
