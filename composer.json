@@ -1,6 +1,6 @@
 {
-    "name": "brianvb/yii2-route-alerts",
-    "description": "Admin area, filter, and migrations needed for show admin-generated alerts on specific routes",
+    "name": "brianvb/yii2-route-messages",
+    "description": "Admin area, filter, and migrations needed for show admin-generated messages on specific routes",
     "type": "yii2-extension",
     "require": {
         "brianvb/yii2-crud": "*",
@@ -15,7 +15,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "bvb\\routealert\\": "src"
+            "bvb\\routemessage\\": "src"
         }
     },
     "repositories": [

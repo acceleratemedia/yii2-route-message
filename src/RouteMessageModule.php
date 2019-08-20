@@ -1,13 +1,13 @@
 <?php
 
-namespace bvb\routealert;
+namespace bvb\routemessage;
 
 use Yii;
 
 /**
  * Here to set the alias
  */
-class RouteAlertModule extends \yii\base\Module
+class RouteMessageModule extends \yii\base\Module
 {
 	/**
 	 * Set an alias for ths root directory of the module
@@ -15,7 +15,7 @@ class RouteAlertModule extends \yii\base\Module
 	 */
 	public function init()
 	{
-		Yii::setAlias('@bvb-route-alert', __DIR__);
+		Yii::setAlias('@bvb-route-message', __DIR__);
 		parent::init();
 	}
 }

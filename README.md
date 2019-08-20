@@ -1,1 +1,1 @@
-# yii2-route-alerts
+# yii2-route-message

@@ -1,12 +1,12 @@
 <?php
 
-namespace bvb\routealert\frontend\helpers;
+namespace bvb\routemessage\frontend\helpers;
 
 use Yii;
 use yii\helpers\ArrayHelper;
 use yii\web\Cookie;
 
-class RouteAlertHelper
+class RouteMessageHelper
 {
 	/**
 	 * @param array $routeAlert
@@ -31,31 +31,31 @@ class RouteAlertHelper
 				return false;
 			}
 		} else {
-			self::setRouteAlertCookie($routeAlert);
+			self::setRouteMessageCookie($routeAlert);
 		}
 		return true;
 	}
 
 	/**
 	 * @param array $routeAlert
-	 * @return string The unique cookie name for the route alert
+	 * @return string The unique cookie name for the route message
 	 */
 	static function getCookieName($routeAlert)
 	{
-		return 'seenRouteAlert-'.$routeAlert['app_id'].'-'.$routeAlert['route'];
+		return 'seenRouteMessage-'.$routeAlert['app_id'].'-'.$routeAlert['route'];
 	}
 
 	/**
 	 * @param array $routeAlert
 	 * @return void
 	 */
-	static function setRouteAlertCookie($routeAlert)
+	static function setRouteMessageCookie($routeAlert)
 	{
-		$seenRouteAlertCookie = new Cookie([
+		$seenRouteMessageCookie = new Cookie([
 		    'name' => self::getCookieName($routeAlert),
 		    'value' => time(),
 		    'expire' => time()+intval($routeAlert['frequency'])
 		]);
-		Yii::$app->response->cookies->add($seenRouteAlertCookie);
+		Yii::$app->response->cookies->add($seenRouteMessageCookie);
 	}
 }

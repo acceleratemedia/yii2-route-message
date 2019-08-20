@@ -1,18 +1,18 @@
 <?php
 
-use bvb\routealert\backend\helpers\RouteAlertHelper;
+use bvb\routemessage\backend\helpers\RouteMessageHelper;
 use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $search_model backend\models\RouteAlert */
+/* @var $search_model backend\models\RouteMessage */
 /* @var $data_provider yii\data\ActiveDataProvider */
 
 $this->title = 'Route Alerts';
 
-$applicationsList = RouteAlertHelper::getApplicationsList();
+$applicationsList = RouteMessageHelper::getApplicationsList();
 ?>
-<div class="route-alert-index">
+<div class="route-message-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -36,9 +36,9 @@ $applicationsList = RouteAlertHelper::getApplicationsList();
             [
                 'attribute' => 'frequency',
                 'value' => function($model){
-                    echo RouteAlertHelper::$defaultFrequencyList[$model->frequency];
+                    echo RouteMessageHelper::$defaultFrequencyList[$model->frequency];
                 },
-                'filter' => RouteAlertHelper::$defaultFrequencyList
+                'filter' => RouteMessageHelper::$defaultFrequencyList
             ],
             'css_class',
             'active:boolean',
@@ -48,7 +48,7 @@ $applicationsList = RouteAlertHelper::getApplicationsList();
                 'class' => 'yii\grid\ActionColumn',
                 'buttons' => [
                     'delete' => function($url, $model, $key){
-                        return Html::a('<i class="fas fa-trash"></i>', ['delete/', 'id'=>$model->id], ['data-method'=>'post', 'data-confirm' => 'Are you sure you want to delete this route alert?']);
+                        return Html::a('<i class="fas fa-trash"></i>', ['delete/', 'id'=>$model->id], ['data-method'=>'post', 'data-confirm' => 'Are you sure you want to delete this route message?']);
                     },
                     'update' => function($url, $model, $key){
                         return Html::a('<i class="fas fa-edit"></i>', ['update/', 'id'=>$model->id]);

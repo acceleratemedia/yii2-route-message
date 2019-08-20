@@ -1,18 +1,18 @@
 <?php
 
-namespace bvb\routealert\backend\controllers;
+namespace bvb\routemessage\backend\controllers;
 
-use bvb\routealert\backend\models\RouteAlert;
+use bvb\routemessage\backend\models\RouteMessage;
 
 /**
- * UpdateController is for updating RouteAlert records
+ * UpdateController is for updating RouteMessage records
  */
 class UpdateController extends \bvb\crud\controllers\UpdateController
 {
     /**
      * {@inheritdoc}
      */
-    public $modelClass = RouteAlert::class;
+    public $modelClass = RouteMessage::class;
 
     /**
      * {@inheritdoc}

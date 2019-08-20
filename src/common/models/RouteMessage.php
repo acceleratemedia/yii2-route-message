@@ -1,11 +1,11 @@
 <?php
 
-namespace bvb\routealert\common\models;
+namespace bvb\routemessage\common\models;
 
 use Yii;
 
 /**
- * This is the model class for table "route_alert".
+ * This is the model class for table "route_message".
  *
  * @property integer $id
  * @property string $app_id
@@ -15,13 +15,13 @@ use Yii;
  * @property string $create_time
  * @property string $update_time
  */
-class RouteAlert extends \yii\db\ActiveRecord
+class RouteMessage extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
-        return 'route_alert';
+        return 'route_message';
     }
 }

@@ -1,22 +1,22 @@
 <?php
 
-namespace bvb\routealert\backend\controllers;
+namespace bvb\routemessage\backend\controllers;
 
-use bvb\routealert\backend\models\RouteAlert;
-use bvb\routealert\backend\models\search\RouteAlert as RouteAlertSearch;
+use bvb\routemessage\backend\models\RouteMessage;
+use bvb\routemessage\backend\models\search\RouteMessage as RouteMessageSearch;
 
 /**
- * ManageController displays a list of route alerts
+ * ManageController displays a list of route messages
  */
 class ManageController extends \bvb\crud\controllers\ManageController
 {
     /**
      * {@inheritdoc}
      */
-    public $modelClass = RouteAlert::class;
+    public $modelClass = RouteMessage::class;
 
     /**
      * {@inheritdoc}
      */
-    public $searchModelClass = RouteAlertSearch::class;
+    public $searchModelClass = RouteMessageSearch::class;
 }

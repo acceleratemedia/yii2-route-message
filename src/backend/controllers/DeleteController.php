@@ -1,18 +1,18 @@
 <?php
 
-namespace bvb\routealert\backend\controllers;
+namespace bvb\routemessage\backend\controllers;
 
-use bvb\routealert\backend\models\RouteAlert;
+use bvb\routemessage\backend\models\RouteMessage;
 
 /**
- * DeleteController is for deleting RouteAlerts and their db records
+ * DeleteController is for deleting RouteMessages and their db records
  */
 class DeleteController extends \bvb\crud\controllers\DeleteController
 {   
     /**
      * {@inheritdoc}
      */
-    public $modelClass = RouteAlert::class;
+    public $modelClass = RouteMessage::class;
 
     /**
      * {@inheritdoc}

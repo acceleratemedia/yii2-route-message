@@ -1,6 +1,6 @@
 <?php
 
-namespace bvb\routealert\console;
+namespace bvb\routemessage\console;
 
 use Yii;
 use yii\base\BootstrapInterface;
@@ -13,10 +13,10 @@ class Bootstrap implements BootstrapInterface
      */
     public function bootstrap($app)
     {
-        Yii::$app->controllerMap['m-route-alert'] = [
+        Yii::$app->controllerMap['m-route-message'] = [
             'class' => \yii\console\controllers\MigrateController::class,
-            'migrationNamespaces' => ['bvb\routealert\console\migrations'],
-            'migrationTable' => 'm_bvb_route_alert',
+            'migrationNamespaces' => ['bvb\routemessage\console\migrations'],
+            'migrationTable' => 'm_bvb_route_message',
             'migrationPath' => null // This seems to make sure it doesn't pick up other migrations when using the migrate-user command
         ];
     }

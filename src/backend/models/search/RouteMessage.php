@@ -1,15 +1,15 @@
 <?php
 
-namespace bvb\routealert\backend\models\search;
+namespace bvb\routemessage\backend\models\search;
 
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 
 /**
- * RouteAlert represents the model behind the search form about `bvb\routealert\backend\models\RouteAlert`.
+ * RouteMessage represents the model behind the search form about `bvb\routemessage\backend\models\RouteMessage`.
  */
-class RouteAlert extends \bvb\routealert\backend\models\RouteAlert
+class RouteMessage extends \bvb\routemessage\backend\models\RouteMessage
 {
     /**
      * @inheritdoc
