@@ -25,6 +25,7 @@ class FindController extends Controller
         $route = ltrim($parts['path'], '/');
         $result = RouteMessage::find()->where([
                 'AND',
+                ['active' => 1],
                 [
                     'OR',
                     ['app_id' => $app_id],
