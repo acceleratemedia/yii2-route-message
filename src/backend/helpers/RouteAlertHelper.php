@@ -8,7 +8,7 @@ use yii\helpers\ArrayHelper;
 /**
  * Here to automatically sets up the controllerNamespace for backend routes
  */
-class Helper
+class RouteAlertHelper
 {
 	/**
 	 * List of default frequncies with array key being the number of seconds
