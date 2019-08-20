@@ -4,6 +4,7 @@
     "type": "yii2-extension",
     "require": {
         "brianvb/yii2-crud": "*",
+        "brianvb/yii2-user": "*",
         "yiidoc/yii2-redactor": "*",
         "yiisoft/yii2": "^2.0"
     },
