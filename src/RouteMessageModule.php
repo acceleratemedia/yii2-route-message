@@ -15,7 +15,12 @@ class RouteMessageModule extends \yii\base\Module
 	 */
 	public function init()
 	{
-		Yii::setAlias('@bvb-route-message', __DIR__);
+		self::setRouteMessageAlias();
 		parent::init();
+	}
+
+	static function setRouteMessageAlias()
+	{
+		Yii::setAlias('@bvb-route-message', __DIR__);
 	}
 }

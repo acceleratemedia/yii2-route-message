@@ -51,7 +51,7 @@ echo $this->render('@bvb-route-message/frontend/widgets/views/modal');
 
 $ready_js = <<<'JAVASCRIPT'
 $("body").on("click", ".preview-btn", function(e){
-    $("#route-message-modal .modal-content").html($('#routemessage-message').redactor("code.get"));
+    $("#route-message-modal .modal-content #route-message-text").html($('#routemessage-message').redactor("code.get"));
     $("#route-message-modal .modal-dialog").addClass($("#routemessage-css_class").val());
     $("#route-message-modal").modal("show");
 })
