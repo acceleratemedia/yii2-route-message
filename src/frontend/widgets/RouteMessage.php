@@ -40,7 +40,7 @@ $.get(
 ).done(function(data, textStatus, jqXHR){
 	if(data){
         $("#route-message-modal .modal-content").html(data.message);
-        $("#route-message-modal").addClass(data.css_class);
+        $("#route-message-modal .modal-dialog").addClass(data.css_class);
         $("#route-message-modal").modal("show");
 	}
 })
