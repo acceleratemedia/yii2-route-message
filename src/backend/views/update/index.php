@@ -3,11 +3,11 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model bvb\routealert\backend\models\RouteAlert */
+/* @var $model bvb\routemessage\backend\models\RouteMessage */
 
-$this->title = 'Update Route Alert';
+$this->title = 'Update Route Message';
 ?>
-<div class="route-alert-update">
+<div class="route-message-update">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

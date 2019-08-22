@@ -1,4 +1,4 @@
-php yii m-route-alert/create create_route_alert_table \
+php yii m-route-message/create create_route_message_table \
     --fields="route:string:notNull, \
     app_id:string:notNull, \
     message:string:notNull, \

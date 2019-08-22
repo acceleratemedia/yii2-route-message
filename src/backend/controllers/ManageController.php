@@ -1,22 +1,28 @@
 <?php
 
-namespace bvb\routealert\backend\controllers;
+namespace bvb\routemessage\backend\controllers;
 
-use bvb\routealert\backend\models\RouteAlert;
-use bvb\routealert\backend\models\search\RouteAlert as RouteAlertSearch;
+use bvb\routemessage\backend\models\RouteMessage;
+use bvb\routemessage\backend\models\search\RouteMessage as RouteMessageSearch;
+use bvb\user\backend\controllers\traits\AdminAccess;
 
 /**
- * ManageController displays a list of route alerts
+ * ManageController displays a list of route messages
  */
 class ManageController extends \bvb\crud\controllers\ManageController
 {
     /**
-     * {@inheritdoc}
+     * Implement AccessControl that requires admin role to access actions
      */
-    public $modelClass = RouteAlert::class;
+    use AdminAccess;
 
     /**
      * {@inheritdoc}
      */
-    public $searchModelClass = RouteAlertSearch::class;
+    public $modelClass = RouteMessage::class;
+
+    /**
+     * {@inheritdoc}
+     */
+    public $searchModelClass = RouteMessageSearch::class;
 }

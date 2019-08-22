@@ -1,6 +1,6 @@
 <?php
 
-namespace bvb\routealert\backend\helpers;
+namespace bvb\routemessage\backend\helpers;
 
 use Yii;
 use yii\helpers\ArrayHelper;
@@ -8,7 +8,7 @@ use yii\helpers\ArrayHelper;
 /**
  * Here to automatically sets up the controllerNamespace for backend routes
  */
-class Helper
+class RouteMessageHelper
 {
 	/**
 	 * List of default frequncies with array key being the number of seconds
@@ -25,7 +25,7 @@ class Helper
 	 * Return a list of possible applications a route may be applied to
 	 * Default values are the current application and * for All Applications
 	 * Additional values come from module 
-	 * [[\bvb\routealert\backend\RouteAlertModule::$additionalApplications]]
+	 * [[\bvb\routemessage\backend\RouteMessageModule::$additionalApplications]]
 	 * @return array
 	 */
 	static function getApplicationsList()

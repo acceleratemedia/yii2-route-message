@@ -1,18 +1,24 @@
 <?php
 
-namespace bvb\routealert\backend\controllers;
+namespace bvb\routemessage\backend\controllers;
 
-use bvb\routealert\backend\models\RouteAlert;
+use bvb\routemessage\backend\models\RouteMessage;
+use bvb\user\backend\controllers\traits\AdminAccess;
 
 /**
- * CreateController is for creating RouteAlert models and their records in the db
+ * CreateController is for creating RouteMessage models and their records in the db
  */
 class CreateController extends \bvb\crud\controllers\CreateController
 {
     /**
+     * Implement AccessControl that requires admin role to access actions
+     */
+    use AdminAccess;
+
+    /**
      * {@inheritdoc}
      */
-    public $modelClass = RouteAlert::class;
+    public $modelClass = RouteMessage::class;
 
     /**
      * {@inheritdoc}

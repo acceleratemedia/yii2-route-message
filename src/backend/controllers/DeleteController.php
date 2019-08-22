@@ -1,18 +1,24 @@
 <?php
 
-namespace bvb\routealert\backend\controllers;
+namespace bvb\routemessage\backend\controllers;
 
-use bvb\routealert\backend\models\RouteAlert;
+use bvb\routemessage\backend\models\RouteMessage;
+use bvb\user\backend\controllers\traits\AdminAccess;
 
 /**
- * DeleteController is for deleting RouteAlerts and their db records
+ * DeleteController is for deleting RouteMessages and their db records
  */
 class DeleteController extends \bvb\crud\controllers\DeleteController
 {   
     /**
+     * Implement AccessControl that requires admin role to access actions
+     */
+    use AdminAccess;
+
+    /**
      * {@inheritdoc}
      */
-    public $modelClass = RouteAlert::class;
+    public $modelClass = RouteMessage::class;
 
     /**
      * {@inheritdoc}

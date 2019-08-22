@@ -1,20 +1,20 @@
 <?php
 
-namespace bvb\routealert\console\migrations;
+namespace bvb\routemessage\console\migrations;
 
 use yii\db\Migration;
 
 /**
- * Class M190812224429CreateRouteAlertTable
+ * Class M190812224429CreateRouteMessageTable
  */
-class M190812224429CreateRouteAlertTable extends Migration
+class M190812224429CreateRouteMessageTable extends Migration
 {
     /**
      * {@inheritdoc}
      */
     public function safeUp()
     {
-        $this->createTable('{{%route_alert}}', [
+        $this->createTable('{{%route_message}}', [
             'id' => $this->primaryKey(),
             'app_id' => $this->string(100)->notNull()->defaultValue('*'),
             'route' => $this->string(100)->notNull(),
@@ -28,8 +28,8 @@ class M190812224429CreateRouteAlertTable extends Migration
 
         // creates unique index on the app and route
         $this->createIndex(
-            'idx-route_alert-app_id-route-unique',
-            'route_alert',
+            'idx-route_message-app_id-route-unique',
+            'route_message',
             ['app_id', 'route'],
             true
         );
@@ -40,6 +40,6 @@ class M190812224429CreateRouteAlertTable extends Migration
      */
     public function safeDown()
     {
-        $this->dropTable('{{%route_alert}}');
+        $this->dropTable('{{%route_message}}');
     }
 }

@@ -1,18 +1,24 @@
 <?php
 
-namespace bvb\routealert\backend\controllers;
+namespace bvb\routemessage\backend\controllers;
 
-use bvb\routealert\backend\models\RouteAlert;
+use bvb\routemessage\backend\models\RouteMessage;
+use bvb\user\backend\controllers\traits\AdminAccess;
 
 /**
- * UpdateController is for updating RouteAlert records
+ * UpdateController is for updating RouteMessage records
  */
 class UpdateController extends \bvb\crud\controllers\UpdateController
 {
     /**
+     * Implement AccessControl that requires admin role to access actions
+     */
+    use AdminAccess;
+
+    /**
      * {@inheritdoc}
      */
-    public $modelClass = RouteAlert::class;
+    public $modelClass = RouteMessage::class;
 
     /**
      * {@inheritdoc}
