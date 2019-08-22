@@ -13,7 +13,7 @@ class Bootstrap implements BootstrapInterface
      */
     public function bootstrap($app)
     {
-        Yii::$app->controllerMap['migrate-route-alert'] = [
+        Yii::$app->controllerMap['migrate-route-message'] = [
             'class' => \yii\console\controllers\MigrateController::class,
             'migrationNamespaces' => ['bvb\routemessage\console\migrations'],
             'migrationTable' => 'm_bvb_route_message',
