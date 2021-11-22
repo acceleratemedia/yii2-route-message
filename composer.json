@@ -1,5 +1,5 @@
 {
-    "name": "brianvb/yii2-route-message",
+    "name": "acceleratemedia/yii2-route-message",
     "description": "Admin area, filter, and migrations needed for show admin-generated messages on specific routes",
     "type": "yii2-extension",
     "require": {
